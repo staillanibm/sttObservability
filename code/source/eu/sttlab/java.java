@@ -7,6 +7,8 @@ import com.wm.util.Values;
 import com.wm.app.b2b.server.Service;
 import com.wm.app.b2b.server.ServiceException;
 // --- <<IS-START-IMPORTS>> ---
+import java.util.ArrayList;
+import java.util.List;
 // --- <<IS-END-IMPORTS>> ---
 
 public final class java
@@ -22,6 +24,31 @@ public final class java
 
 	// ---( server methods )---
 
+
+
+
+	public static final void allocateMemory (IData pipeline)
+        throws ServiceException
+	{
+		// --- <<IS-START(allocateMemory)>> ---
+		// @sigtype java 3.5
+		// [i] field:0:required memoryMb
+		IDataCursor pipelineCursor = pipeline.getCursor();
+		String	memoryMb = IDataUtil.getString( pipelineCursor, "memoryMb" );
+		String	delayMillis = IDataUtil.getString( pipelineCursor, "delayMillis" );
+		pipelineCursor.destroy();
+		
+		List<byte[]> memoryConsumers = new ArrayList<>();
+		try {
+			memoryConsumers.add(new byte[Integer.parseInt(memoryMb) * 1024 * 1024]); 
+			Thread.sleep(Long.parseLong(delayMillis));
+		} catch (Exception e) {
+		    throw new ServiceException(e);
+		}
+		// --- <<IS-END>> ---
+
+                
+	}
 
 
 

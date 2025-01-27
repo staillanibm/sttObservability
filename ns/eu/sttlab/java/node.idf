@@ -14,5 +14,7 @@ bi0yKTsKfQoKCQ==</value>
   <array name="implements" type="value" depth="1">
   </array>
   <array name="imports" type="value" depth="1">
+    <value>java.util.ArrayList</value>
+    <value>java.util.List</value>
   </array>
 </Values>

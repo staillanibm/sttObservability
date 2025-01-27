@@ -1,0 +1,291 @@
+{
+	"info": {
+		"_postman_id": "91f4818c-4f6c-4a75-949b-db93c45302f5",
+		"name": "Observability",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32883895"
+	},
+	"item": [
+		{
+			"name": "Say hello",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/observability/hello?name=test",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"observability",
+						"hello"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "test"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Calculate Fibonacci",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/observability/fibonacci?n=50",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"observability",
+						"fibonacci"
+					],
+					"query": [
+						{
+							"key": "n",
+							"value": "50"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Sleep",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/observability/sleep?delayMillis=2000",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"observability",
+						"sleep"
+					],
+					"query": [
+						{
+							"key": "delayMillis",
+							"value": "2000"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Memory",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/observability/memory?memoryMb=100&delayMillis=60000",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"observability",
+						"memory"
+					],
+					"query": [
+						{
+							"key": "memoryMb",
+							"value": "100"
+						},
+						{
+							"key": "delayMillis",
+							"value": "60000"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post Fibonacci request",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/observability/fibonacci/async?n=3",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"observability",
+						"fibonacci",
+						"async"
+					],
+					"query": [
+						{
+							"key": "n",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post messages",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"message\": [\n    \"test1\",\n    \"test2\",\n    \"test3\",\n    \"test4\",\n    \"test5\",\n    \"test6\",\n    \"test7\",\n    \"test8\",\n    \"test9\"\n  ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/observability/message/async",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"observability",
+						"message",
+						"async"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post Fibonacci request (400 error)",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/observability/fibonacci/async",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"observability",
+						"fibonacci",
+						"async"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Calculate Fibonacci (error)",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/observability/fibonacci?n=abcd",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"observability",
+						"fibonacci"
+					],
+					"query": [
+						{
+							"key": "n",
+							"value": "abcd"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "{{password}}",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "{{userName}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
