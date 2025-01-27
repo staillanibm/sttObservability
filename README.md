@@ -1,2 +1,7 @@
-# Package Name : sttObservability
-This is a webMethods package and requires a webMethods Integration Server to host it. Package versioning and configuration can be found in the package [manifest](./sttObservability/manifest.v3) file. Service and API documentation is available on the package's home page http://&lt;server&gt;:&lt;port&gt;/&lt;packagename>.
+# webMethods observability
+
+This repository contains various assets to showcase observability within the webMethods ecosystem:
+-   a MSR integration package which exposes various API endpoints, grouped into a REST Observability API
+-   a webMethods API GW proxy for this API
+-   scripts to automate the invocation of these APIs
+-   Grafana dashboards to observe the metrics exposed by the MSR, API GW and UM
