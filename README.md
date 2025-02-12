@@ -52,7 +52,7 @@ The stack contains:
   
 
 | Component               | URL                          | 
-|-------------------------|----------------------------|------------|----------|
+|-------------------------|----------------------------|
 | MSR admin console      | [http://localhost:15555](http://localhost:15555) | 
 | API Gateway UI         | [http://localhost:9072](http://localhost:9072)   | 
 | API Gateway service    | [http://localhost:45555](http://localhost:45555) |
