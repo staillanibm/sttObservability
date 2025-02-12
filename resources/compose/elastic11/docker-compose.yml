@@ -1,0 +1,31 @@
+services:
+  elastic11:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.12.2
+    container_name: elastic11
+#    ports:
+#      - "9200:9200"
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+      - http.publish_host=elastic11
+      - "ES_JAVA_OPTS=-Xms2g -Xmx2g"
+    hostname: elastic11
+    user: elasticsearch
+    volumes:
+      - elastic-data:/usr/share/elasticsearch/data
+    ulimits:
+      nofile:
+        soft: 65536
+        hard: 65536
+      memlock:
+        soft: -1
+        hard: -1
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9200/_cluster/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+
+volumes:
+  elastic-data:

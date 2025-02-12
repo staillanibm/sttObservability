@@ -18,12 +18,17 @@ if [ -z "$ROOT_URL" ]; then
   exit 1
 fi
 
+if [ -z "$API_KEY" ]; then
+  echo "Please set API_KEY environment variable."
+  exit 1
+fi
+
 # Execute the loop n times
 for ((i=1; i<=n; i++)); do
     status_code=$(curl --write-out "%{http_code}" --silent --output /dev/null \
-      --location "${ROOT_URL}/observability/hello?name=${NAME}" \
+      --location "${GW_ROOT_URL}/gateway/ObservabilityAPI/1.0/hello?name=${NAME}" \
       --header "Accept: application/json" \
-      --user "${USER}:${PASSWORD}")
+      --header "x-gateway-apikey: ${API_KEY}")
     echo "Call ${i} - Status code: ${status_code}"
 done
 

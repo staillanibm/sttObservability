@@ -1,0 +1,11 @@
+volumes:
+  msr-logs:
+  msr11-logs:
+  apigw-logs:
+  apigw11-logs:
+  devportal-logs:
+  um-logs:
+  es-logs:
+  kb-logs:
+  ngninx-logs:
+  otelc-logs:

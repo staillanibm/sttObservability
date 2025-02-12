@@ -1,2 +1,0 @@
-# Observability demo script
-

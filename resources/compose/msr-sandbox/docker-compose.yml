@@ -1,0 +1,36 @@
+services:
+  msr-sandbox:
+    container_name: msr-sandbox
+    image: cp.icr.io/cp/webmethods/integration/webmethods-microservicesruntime:11.1.0.0
+    ports:
+      - "15555:5555"
+    volumes:
+      - ./msr-sandbox/application.properties:/opt/softwareag/IntegrationServer/application.properties
+      - ./msr-sandbox/setenv.sh:/opt/softwareag/IntegrationServer/bin/setenv.sh
+      - ../..:/opt/softwareag/IntegrationServer/packages/sttObservability
+      - $HOME/git/WmE2EMIntegrationAgent:/opt/softwareag/IntegrationServer/packages/WmE2EMIntegrationAgent
+    environment:
+      - SAG_IS_CONFIG_PROPERTIES=/opt/softwareag/IntegrationServer/application.properties
+      - SW_AGENT_COLLECTOR_ESTABLISH_CLOUD_COMMUNICATION=false
+      - SW_AGENT_EXTERNAL_ESTABLISH_COMMUNICATION=true
+      - SW_AGENT_OTEL_ENDPOINT=http://jaeger:4318/v1/traces
+      - SW_AGENT_OTEL_HEADERS=Content-Type#application/x-protobuf
+      # - SW_AGENT_EXT_SYSTEM_USER=
+      # - SW_AGENT_EXT_SYSTEM_PASSWORD=
+      - SW_AGENT_EXTERNAL_SUPPORT_LONG_ID=false
+      - SW_AGENT_EXTERNAL_API_ERROR_CODES=502,503,504
+      - SW_AGENT_OTEL_RESOURCE_ATTRIBUTES=service.name#msr-sandbox, service.namespace#default
+      - SW_AGENT_TRACE_TRANSFER_INTERVAL=1000
+    deploy:
+      resources:
+        limits:
+          memory: "2048m"      
+          cpus: "2"        
+        reservations:
+          memory: "1024m"      
+          cpus: "1"         
+
+    healthcheck:
+      interval: 5s
+      retries: 24
+      test: ["CMD-SHELL", "curl -o /dev/null -s -w '%{http_code}' http://localhost:5555 | grep -qE '^(200|3[0-9]{2})$'"]

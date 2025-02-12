@@ -93,7 +93,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "beb36sbfizh8ge"
+            "uid": "prometheus"
           },
           "disableTextWrap": false,
           "editorMode": "code",
@@ -112,7 +112,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "beb36sbfizh8ge"
+        "uid": "prometheus"
       },
       "description": "The number of times the service has executed since the Microservices Runtime last started.",
       "fieldConfig": {
@@ -169,7 +169,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "beb36sbfizh8ge"
+            "uid": "prometheus"
           },
           "disableTextWrap": false,
           "editorMode": "code",
@@ -188,7 +188,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "beb36sbfizh8ge"
+        "uid": "prometheus"
       },
       "description": "The number of times the service has executed since the Microservices Runtime last started.",
       "fieldConfig": {
@@ -245,7 +245,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "beb36sbfizh8ge"
+            "uid": "prometheus"
           },
           "disableTextWrap": false,
           "editorMode": "code",
@@ -264,7 +264,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "beb36sbfizh8ge"
+        "uid": "prometheus"
       },
       "description": "The number of times the service has executed since the Microservices Runtime last started.",
       "fieldConfig": {
@@ -321,7 +321,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "beb36sbfizh8ge"
+            "uid": "prometheus"
           },
           "disableTextWrap": false,
           "editorMode": "code",
@@ -340,7 +340,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "beb36sbfizh8ge"
+        "uid": "prometheus"
       },
       "description": "The total number of HTTP/S requests since the last statistics poll. The statistics poll interval is controlled by the watt.server.stats.pollTime server configuration parameter. The default interval is 60 seconds.\nA request is included in this metric if it calls a top-level service, the service was not canceled, the service is not in a circuit breaker flow step, and the service does not belong to a package listed for the watt.server.stats.packages.exclude server configuration parameter.",
       "fieldConfig": {
@@ -422,7 +422,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "beb36sbfizh8ge"
+            "uid": "prometheus"
           },
           "disableTextWrap": false,
           "editorMode": "code",
@@ -441,7 +441,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "beb36sbfizh8ge"
+        "uid": "prometheus"
       },
       "description": "The number of top-level services started each minute.",
       "fieldConfig": {
@@ -523,7 +523,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "beb36sbfizh8ge"
+            "uid": "prometheus"
           },
           "disableTextWrap": false,
           "editorMode": "code",
@@ -542,7 +542,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "beb36sbfizh8ge"
+        "uid": "prometheus"
       },
       "description": "The total number of HTTP/S requests since Microservices Runtime startup.\nA request is included in this metric if it calls a top-level service, the service was not canceled, the service is not in a circuit breaker flow step, and the service does not belong to a package listed for the watt.server.stats.packages.exclude server configuration parameter.",
       "fieldConfig": {
@@ -624,7 +624,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "beb36sbfizh8ge"
+            "uid": "prometheus"
           },
           "disableTextWrap": false,
           "editorMode": "code",
@@ -643,7 +643,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "beb36sbfizh8ge"
+        "uid": "prometheus"
       },
       "description": "The number of top-level services started each minute.",
       "fieldConfig": {
@@ -725,7 +725,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "beb36sbfizh8ge"
+            "uid": "prometheus"
           },
           "disableTextWrap": false,
           "editorMode": "code",
@@ -744,7 +744,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "beb36sbfizh8ge"
+        "uid": "prometheus"
       },
       "description": "The number of service errors since startup, which includes any service that gets an exception of any kind.",
       "fieldConfig": {
@@ -826,7 +826,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "beb36sbfizh8ge"
+            "uid": "prometheus"
           },
           "disableTextWrap": false,
           "editorMode": "code",
@@ -845,7 +845,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "beb36sbfizh8ge"
+        "uid": "prometheus"
       },
       "description": "The number of service errors in the last minute.",
       "fieldConfig": {
@@ -927,7 +927,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "beb36sbfizh8ge"
+            "uid": "prometheus"
           },
           "disableTextWrap": false,
           "editorMode": "code",
@@ -946,7 +946,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "beb36sbfizh8ge"
+        "uid": "prometheus"
       },
       "description": "The number of successful service invokes and service errors since Microservices Runtime startup. This metric excludes services in a package set in the watt.server.stats.packages.exclude parameter.",
       "fieldConfig": {
@@ -1028,7 +1028,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "beb36sbfizh8ge"
+            "uid": "prometheus"
           },
           "disableTextWrap": false,
           "editorMode": "code",
@@ -1047,7 +1047,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "beb36sbfizh8ge"
+        "uid": "prometheus"
       },
       "description": "The running average for the connection time expressed in milliseconds. This can also be described as the average session time or how long a connection is kept alive.",
       "fieldConfig": {
@@ -1130,7 +1130,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "beb36sbfizh8ge"
+            "uid": "prometheus"
           },
           "disableTextWrap": false,
           "editorMode": "code",
@@ -1149,7 +1149,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "beb36sbfizh8ge"
+        "uid": "prometheus"
       },
       "description": "The number of service errors in the last minute, which includes any service that gets an exception of any kind but excludes any services in a package set in the watt.server.stats.packages.exclude server configuration parameter.",
       "fieldConfig": {
@@ -1231,7 +1231,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "beb36sbfizh8ge"
+            "uid": "prometheus"
           },
           "disableTextWrap": false,
           "editorMode": "code",
@@ -1250,7 +1250,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "beb36sbfizh8ge"
+        "uid": "prometheus"
       },
       "description": "The number of errors that were caused by exceptions that are not ServiceExceptions. This is the same value returned by sag_is_number_unknown_errors.",
       "fieldConfig": {
@@ -1332,7 +1332,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "beb36sbfizh8ge"
+            "uid": "prometheus"
           },
           "disableTextWrap": false,
           "editorMode": "code",
@@ -1351,7 +1351,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "beb36sbfizh8ge"
+        "uid": "prometheus"
       },
       "description": "The number of sessions used since Microservices Runtime startup.",
       "fieldConfig": {
@@ -1433,7 +1433,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "beb36sbfizh8ge"
+            "uid": "prometheus"
           },
           "disableTextWrap": false,
           "editorMode": "code",
@@ -1452,7 +1452,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "beb36sbfizh8ge"
+        "uid": "prometheus"
       },
       "description": "The number of current connections to the Microservices Runtime where the connection is a session which can be created multiple ways such as through an HTTP connection, a trigger, the scheduler, etc.",
       "fieldConfig": {
@@ -1534,7 +1534,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "beb36sbfizh8ge"
+            "uid": "prometheus"
           },
           "disableTextWrap": false,
           "editorMode": "code",
@@ -1563,7 +1563,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "beb36sbfizh8ge"
+            "uid": "prometheus"
           },
           "fieldConfig": {
             "defaults": {
@@ -1651,7 +1651,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "beb36sbfizh8ge"
+                "uid": "prometheus"
               },
               "editorMode": "code",
               "expr": "sum(sag_is_jvm_memory_pool_max_mbytes{poolType=\"HEAP\", product=\"msr\"}) * 1024 * 1024",
@@ -1668,7 +1668,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "beb36sbfizh8ge"
+            "uid": "prometheus"
           },
           "fieldConfig": {
             "defaults": {
@@ -1756,7 +1756,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "beb36sbfizh8ge"
+                "uid": "prometheus"
               },
               "editorMode": "code",
               "expr": "sum(sag_is_jvm_memory_pool_max_mbytes{poolType=\"NON_HEAP\", product=\"msr\"}) * 1024 * 1024",
@@ -1773,7 +1773,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "beb36sbfizh8ge"
+            "uid": "prometheus"
           },
           "fieldConfig": {
             "defaults": {
@@ -1861,7 +1861,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "beb36sbfizh8ge"
+                "uid": "prometheus"
               },
               "editorMode": "code",
               "expr": "sum(sag_is_jvm_memory_pool_max_mbytes{product=\"msr\"}) * 1024 * 1024",
@@ -1878,7 +1878,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "beb36sbfizh8ge"
+            "uid": "prometheus"
           },
           "fieldConfig": {
             "defaults": {
@@ -1966,7 +1966,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "beb36sbfizh8ge"
+                "uid": "prometheus"
               },
               "editorMode": "code",
               "expr": "sag_is_jvm_thread_state_terminated_count{product=\"msr\"}",
@@ -1979,7 +1979,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "beb36sbfizh8ge"
+                "uid": "prometheus"
               },
               "editorMode": "code",
               "expr": "sag_is_jvm_thread_state_new_count{product=\"msr\"}",
@@ -1992,7 +1992,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "beb36sbfizh8ge"
+                "uid": "prometheus"
               },
               "editorMode": "code",
               "expr": "sag_is_jvm_thread_state_blocked_count{product=\"msr\"}",
@@ -2005,7 +2005,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "beb36sbfizh8ge"
+                "uid": "prometheus"
               },
               "editorMode": "code",
               "expr": "sag_is_jvm_thread_state_runnable_count{product=\"msr\"}",
@@ -2018,7 +2018,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "beb36sbfizh8ge"
+                "uid": "prometheus"
               },
               "editorMode": "code",
               "expr": "sag_is_jvm_thread_state_waiting_count{product=\"msr\"}",
@@ -2035,7 +2035,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "beb36sbfizh8ge"
+            "uid": "prometheus"
           },
           "fieldConfig": {
             "defaults": {
@@ -2123,7 +2123,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "beb36sbfizh8ge"
+                "uid": "prometheus"
               },
               "editorMode": "code",
               "expr": "sag_is_jvm_classes_loaded_total{product=\"msr\"}",
@@ -2136,7 +2136,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "beb36sbfizh8ge"
+                "uid": "prometheus"
               },
               "editorMode": "code",
               "expr": "sag_is_jvm_classes_total{product=\"msr\"}",
@@ -2153,7 +2153,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "beb36sbfizh8ge"
+            "uid": "prometheus"
           },
           "fieldConfig": {
             "defaults": {
@@ -2242,7 +2242,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "beb36sbfizh8ge"
+                "uid": "prometheus"
               },
               "editorMode": "code",
               "expr": "sag_is_jvm_memory_buffer_pool_capacity_mbytes{name=\"mapped\", product=\"msr\"} * 1024 * 1024",
@@ -2276,7 +2276,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "beb36sbfizh8ge"
+        "uid": "prometheus"
       },
       "description": "The total number of times the service was executed in the last polling interval.",
       "fieldConfig": {
@@ -2359,7 +2359,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "beb36sbfizh8ge"
+            "uid": "prometheus"
           },
           "disableTextWrap": false,
           "editorMode": "code",
@@ -2378,7 +2378,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "beb36sbfizh8ge"
+        "uid": "prometheus"
       },
       "description": "The average number of milliseconds to process the Microservices Runtime service in the last polling interval.",
       "fieldConfig": {
@@ -2462,7 +2462,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "beb36sbfizh8ge"
+            "uid": "prometheus"
           },
           "disableTextWrap": false,
           "editorMode": "builder",
@@ -2481,7 +2481,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "beb36sbfizh8ge"
+        "uid": "prometheus"
       },
       "description": "The total number of errors for the service since Microservices Runtime last started.",
       "fieldConfig": {
@@ -2564,7 +2564,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "beb36sbfizh8ge"
+            "uid": "prometheus"
           },
           "disableTextWrap": false,
           "editorMode": "code",
@@ -2583,7 +2583,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "beb36sbfizh8ge"
+        "uid": "prometheus"
       },
       "description": "The number of times the service has executed since the Microservices Runtime last started.",
       "fieldConfig": {
@@ -2666,7 +2666,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "beb36sbfizh8ge"
+            "uid": "prometheus"
           },
           "disableTextWrap": false,
           "editorMode": "code",
@@ -2685,7 +2685,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "beb36sbfizh8ge"
+        "uid": "prometheus"
       },
       "description": "The number of concurrent service executions for this service at the time Microservices Runtime gathered the metrics.",
       "fieldConfig": {
@@ -2768,7 +2768,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "beb36sbfizh8ge"
+            "uid": "prometheus"
           },
           "disableTextWrap": false,
           "editorMode": "code",

@@ -9,6 +9,12 @@ The following environment variables must be set before running any script:
 -   ROOT_URL: the URL of the IS/MSR. For instance "http://localhost:5555"
 -   USER: basic auth user to call the IS/MSR. For instance "Administrator"
 -   PASSWORD: basic auth password to call the IS/MSR. For instance "manage"
+
+```
+export ROOT_URL=http://localhost:5555
+export USER=Administrator
+export PASSWORD=manage
+```
   
 ##  Hello world 
 
@@ -20,6 +26,21 @@ The script takes two arguments:
 The following command perfors a sequence of 10 API calls, passing it the name QP value "Bob":
 ```
 ./run-hello.sh 10 Bob
+```
+  
+To trigger a HTTP 400 (Bad request) response:
+```
+./run-hello.sh 1 error400
+```
+  
+To trigger a HTTP 500 (Server error) response:
+```
+./run-hello.sh 1 error500
+```
+  
+The following call (with the "otel" QP value) makes a call to a Java service that waits 500 ms, then calculates the Fibonacci sequence for 40, and returns a response. it can be use to visualize Open Telemetry traces:
+```
+./run-hello.sh 1 otel
 ```
 
 ##  Calculate Fibonacci sequence
@@ -56,9 +77,9 @@ The script takes two arguments:
 -   the number of API calls that must be performed. These calls are parallelized,
 -   the sleep waiting time in milliseconds
   
-The following command makes 10 simultaneous API calls:
+The following command takes 50 threads for 60 seconds 
 ```
-./run-sleep.sh 50
+./run-sleep.sh 50 60000
 ```
 
 ##  Messaging

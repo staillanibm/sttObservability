@@ -1,0 +1,18 @@
+services:
+  umserver:
+    image: cp.icr.io/cp/webmethods/universalmessaging/universalmessaging-server:11.1.1
+    container_name: umserver
+#    ports:
+#      - "9000:9000"
+#      - "9200:9200"
+    volumes:
+      - um11-data-volume:/opt/softwareag/UniversalMessaging/server/umserver/data
+      - um11-conf-volume:/opt/softwareag/common/conf
+    healthcheck:
+      interval: 5s
+      retries: 12
+      test: ["CMD-SHELL", "curl --silent http://localhost:9000/health/ | grep -q '\"ServerStatus\":\"OK\"'"]
+
+volumes:
+  um11-data-volume:
+  um11-conf-volume:

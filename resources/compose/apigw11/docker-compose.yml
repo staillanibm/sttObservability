@@ -1,0 +1,18 @@
+services:
+  apigw11:
+    image: cp.icr.io/cp/webmethods/api/api-gateway:11.1
+    container_name: apigw11
+    ports:
+      - "45555:5555"
+      - "45543:5543"
+      - "9072:9072"
+#    volumes:
+#      - $HOME/git/WmE2EMAPIAgent:/opt/softwareag/IntegrationServer/packages/WmE2EMAPIAgent
+    environment:
+      - apigw_elasticsearch_hosts=elastic11:9200
+      - apigw_kibana_dashboardInstance=http://kibana11:5601
+    depends_on:
+      elastic11:
+        condition: service_healthy
+
+

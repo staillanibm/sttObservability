@@ -88,7 +88,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "beb36sbfizh8ge"
+            "uid": "prometheus"
           },
           "editorMode": "code",
           "expr": "sag_um_server_cpu_usage_ratio * 100 ",
@@ -103,7 +103,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "beb36sbfizh8ge"
+        "uid": "prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -155,7 +155,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "beb36sbfizh8ge"
+            "uid": "prometheus"
           },
           "editorMode": "code",
           "expr": "(sag_um_server_memory_heap_usage_bytes + sag_um_server_memory_direct_usage_bytes) / (sag_um_server_memory_heap_max_bytes + sag_um_server_memory_direct_max_bytes) * 100",
@@ -170,7 +170,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "beb36sbfizh8ge"
+        "uid": "prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -222,7 +222,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "beb36sbfizh8ge"
+            "uid": "prometheus"
           },
           "editorMode": "code",
           "expr": "(sag_um_server_disk_usage_bytes / sag_um_server_disk_total_bytes) * 100 ",
@@ -237,7 +237,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "beb36sbfizh8ge"
+        "uid": "prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -318,7 +318,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "beb36sbfizh8ge"
+            "uid": "prometheus"
           },
           "editorMode": "code",
           "expr": "sum(sag_um_threadpool_idle_threads)",
@@ -329,7 +329,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "beb36sbfizh8ge"
+            "uid": "prometheus"
           },
           "editorMode": "code",
           "expr": "sum(sag_um_threadpool_allocated_threads)",
@@ -342,7 +342,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "beb36sbfizh8ge"
+            "uid": "prometheus"
           },
           "editorMode": "code",
           "expr": "sum(sag_um_threadpool_stalled_tasks)",
@@ -355,7 +355,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "beb36sbfizh8ge"
+            "uid": "prometheus"
           },
           "editorMode": "code",
           "expr": "sum(sag_um_threadpool_queued_tasks)",
@@ -372,7 +372,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "beb36sbfizh8ge"
+        "uid": "prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -425,7 +425,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "beb36sbfizh8ge"
+            "uid": "prometheus"
           },
           "editorMode": "code",
           "expr": "sag_um_server_currentconnections_total",
@@ -440,7 +440,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "beb36sbfizh8ge"
+        "uid": "prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -490,7 +490,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "beb36sbfizh8ge"
+            "uid": "prometheus"
           },
           "editorMode": "code",
           "expr": "sag_um_server_bytesin_bytes",
@@ -505,7 +505,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "beb36sbfizh8ge"
+        "uid": "prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -555,7 +555,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "beb36sbfizh8ge"
+            "uid": "prometheus"
           },
           "editorMode": "code",
           "expr": "sag_um_server_bytesout_bytes",
@@ -570,7 +570,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "beb36sbfizh8ge"
+        "uid": "prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -619,7 +619,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "beb36sbfizh8ge"
+            "uid": "prometheus"
           },
           "editorMode": "code",
           "expr": "sag_um_server_publishedevents_total",
@@ -634,7 +634,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "beb36sbfizh8ge"
+        "uid": "prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -683,7 +683,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "beb36sbfizh8ge"
+            "uid": "prometheus"
           },
           "editorMode": "code",
           "expr": "sag_um_server_consumedevents_total",
@@ -711,7 +711,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "beb36sbfizh8ge"
+        "uid": "prometheus"
       },
       "description": "Total number of events published on the queue",
       "fieldConfig": {
@@ -805,7 +805,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "beb36sbfizh8ge"
+        "uid": "prometheus"
       },
       "description": "Total number of events consumed from the queue",
       "fieldConfig": {
@@ -899,7 +899,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "beb36sbfizh8ge"
+        "uid": "prometheus"
       },
       "description": "Total number of events on the queue",
       "fieldConfig": {
@@ -993,7 +993,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "beb36sbfizh8ge"
+        "uid": "prometheus"
       },
       "description": "Amount of memory used by the queue in bytes",
       "fieldConfig": {
@@ -1088,7 +1088,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "beb36sbfizh8ge"
+        "uid": "prometheus"
       },
       "description": "Current space used by the queue in bytes",
       "fieldConfig": {
@@ -1183,7 +1183,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "beb36sbfizh8ge"
+        "uid": "prometheus"
       },
       "description": "Current number of queue consumers",
       "fieldConfig": {
