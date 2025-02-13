@@ -103,7 +103,7 @@ export API_KEY=<your-key>
 ```
 
 Once this has been done, the run-message-gw.sh script can be used to test observability at API Gateway level.
-The run-message-gw.sh script is always identical to run-message.sh, except it uses an API key to authenticate to the API.
+The run-message-gw.sh script is almost identical to run-message.sh, except it uses an API key to authenticate to the API.
   
 For instance, the following command perfors a sequence of 10 API calls, passing it the name QP value "Bob":
 ```
