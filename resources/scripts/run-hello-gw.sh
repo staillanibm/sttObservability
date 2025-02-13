@@ -13,8 +13,8 @@ n=$1
 NAME=$2
 
 # Ensure environment variables are set
-if [ -z "$ROOT_URL" ]; then
-  echo "Please set ROOT_URL environment variable."
+if [ -z "$GW_ROOT_URL" ]; then
+  echo "Please set GW_ROOT_URL environment variable."
   exit 1
 fi
 

@@ -93,3 +93,19 @@ The following command makes an API call that posts 1000 messages of 10 character
 ```
 ./run-message.sh 1000 10
 ```
+
+##  API Gateway
+
+The Observability API is managed by the API gateway. An API key must be presented to call the API, and this key must be passed in the form of an environment variable. An environment variable must also be set for the API gateway root URL:
+```
+export GW_ROOT_URL=http://localhost:45555
+export API_KEY=<your-key>
+```
+
+Once this has been done, the run-message-gw.sh script can be used to test observability at API Gateway level.
+The run-message-gw.sh script is always identical to run-message.sh, except it uses an API key to authenticate to the API.
+  
+For instance, the following command perfors a sequence of 10 API calls, passing it the name QP value "Bob":
+```
+./run-hello-gw.sh 10 Bob
+```
