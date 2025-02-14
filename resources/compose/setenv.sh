@@ -9,3 +9,4 @@ export COMPOSE_FILE=$COMPOSE_FILE:./jaeger/docker-compose.yml
 export COMPOSE_FILE=$COMPOSE_FILE:./prometheus/docker-compose.yml
 export COMPOSE_FILE=$COMPOSE_FILE:./grafana/docker-compose.yml
 export COMPOSE_FILE=$COMPOSE_FILE:./msr-sandbox/docker-compose.yml
+export COMPOSE_FILE=$COMPOSE_FILE:./apigw-init/docker-compose.yml

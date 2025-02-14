@@ -49,6 +49,7 @@ The stack contains:
 -   a Prometheus instance, which is preconfigured to scrape the MSR, API gateway and UM metrics. I have deliberately chosen not to configure persistence for this Prometheus.
 -   a Grafana instance, which is preconfigured with a connection to the Prometheus instance and with three dashboards: MSR, API GW and UM.
 -   a Jaeger instance, which receives the Open Telemetry spans emitted by the MSR. At target I also plan to have API Gateway spans to have a real end-to-end view there.
+-   an Ansible container that runs a playbook: it waits for the API gateway to be ready and then imports the ObservabilityAPI.zip proxy archive, which embeds an application that is authorized to call the API. The API key value is displayed in the ansible-apigw-init container logs.
   
 
 | Component               | URL                          | 
@@ -64,12 +65,8 @@ UM and Elastic ports aren't mapped, if you need to access them then just modify 
 Use the default product user names and passwords to connect (login is disabled for Prometheus, Grafana and Jaeger.)   
 I have chosen simplicity over security here, assuming this stack runs on a laptop. If you want to host all this on a remote server, please do harden the security settings!!!  
 
-##  Post installation
-
-The import of the [Observability API proxy](./resources/api/ObservabilityAPI.zip) into the API Gateway isn't automated yet. You can either do it in the Gateway UI or via an API call to POST /rest/apigateway/archive  
-The proxy archive embeds an application with an API key that you can use to call the API.  
 
 ##  Observability demo
 
-A few scripts are available under ./resources/scripts to call the Observability API. They're documented in [this README](./resources/scripts/README.md), while the API specification is [available here](./resources/api/ObservabilityAPI.yml).
+A few scripts are available under ./resources/scripts to call the Observability API. They're documented in [this README](./resources/scripts/README.md), while the API specification is [available here](./resources/compose/apigw-init/zip/ObservabilityAPI.zip)
 

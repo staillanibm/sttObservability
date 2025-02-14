@@ -1,0 +1,14 @@
+services:
+  ansible-apigw-init:
+    image: quay.io/ansible/ansible-runner:latest
+    container_name: ansible-apigw-init
+    volumes:
+      - ./apigw-init/playbook.yml:/ansible/playbook.yml  
+      - ./apigw-init/zip:/ansible/zip 
+    environment:
+      ROOT_URL: "http://apigw11:5555/rest/apigateway"
+      APIGW_USER: "Administrator"
+      APIGW_PASSWORD: "manage"
+      ZIP_FOLDER: "/ansible/zip"
+    working_dir: /ansible
+    command: ansible-playbook -i localhost, -c local /ansible/playbook.yml
