@@ -15,10 +15,6 @@ if [ -z "$ROOT_URL" ]; then
   exit 1
 fi
 
-# Timestamp for the log file
-start_timestamp=$(date +%Y%m%d_%H%M%S)
-log_file="fibo_async_${start_timestamp}.log"
-
 # Execute the loop n times
 for ((i=1; i<=n; i++)); do
   {
@@ -28,7 +24,6 @@ for ((i=1; i<=n; i++)); do
     status_code=$(curl --write-out "%{http_code}" --silent --output /dev/null \
       --location "${ROOT_URL}/observability/fibonacci?n=50" \
       --header "Accept: application/json" \
-      --header "x-gateway-apikey: ${API_KEY}" \
       --user "${USER}:${PASSWORD}")
   } &
 done

@@ -11,7 +11,7 @@ The following environment variables must be set before running any script:
 -   PASSWORD: basic auth password to call the IS/MSR. For instance "manage"
 
 ```
-export ROOT_URL=http://localhost:5555
+export ROOT_URL=http://localhost:15555
 export USER=Administrator
 export PASSWORD=manage
 ```

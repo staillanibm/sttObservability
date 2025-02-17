@@ -38,7 +38,7 @@
       "datasource": {
         "type": "prometheus"
       },
-      "description": "The number of times the service has executed since the Microservices Runtime last started.",
+      "description": "",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -114,7 +114,7 @@
         "type": "prometheus",
         "uid": "prometheus"
       },
-      "description": "The number of times the service has executed since the Microservices Runtime last started.",
+      "description": "",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -190,7 +190,7 @@
         "type": "prometheus",
         "uid": "prometheus"
       },
-      "description": "The number of times the service has executed since the Microservices Runtime last started.",
+      "description": "",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -266,7 +266,7 @@
         "type": "prometheus",
         "uid": "prometheus"
       },
-      "description": "The number of times the service has executed since the Microservices Runtime last started.",
+      "description": "",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -429,7 +429,7 @@
           "expr": "sag_is_http_requests{product=\"msr\"}",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
-          "legendFormat": "{{label_name}}",
+          "legendFormat": "count",
           "range": true,
           "refId": "A",
           "useBackend": false
@@ -530,7 +530,7 @@
           "expr": "sag_is_request_starts_per_minute{product=\"msr\"}",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
-          "legendFormat": "__auto",
+          "legendFormat": "starts per minute",
           "range": true,
           "refId": "A",
           "useBackend": false
@@ -631,7 +631,7 @@
           "expr": "sag_is_total_http_requests{product=\"msr\"}",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
-          "legendFormat": "__auto",
+          "legendFormat": "count",
           "range": true,
           "refId": "A",
           "useBackend": false
@@ -732,7 +732,7 @@
           "expr": "sag_is_service_starts_per_minute{product=\"msr\"}",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
-          "legendFormat": "__auto",
+          "legendFormat": "starts per minute",
           "range": true,
           "refId": "A",
           "useBackend": false
@@ -833,7 +833,7 @@
           "expr": "sag_is_number_service_errors{product=\"msr\"}",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
-          "legendFormat": "__auto",
+          "legendFormat": "count",
           "range": true,
           "refId": "A",
           "useBackend": false
@@ -934,7 +934,7 @@
           "expr": "sag_is_number_service_errors_per_minute{product=\"msr\"}",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
-          "legendFormat": "__auto",
+          "legendFormat": "count per minute",
           "range": true,
           "refId": "A",
           "useBackend": false
@@ -1035,7 +1035,7 @@
           "expr": "sag_is_number_service_invokes{product=\"msr\"}",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
-          "legendFormat": "__auto",
+          "legendFormat": "count",
           "range": true,
           "refId": "A",
           "useBackend": false
@@ -1137,7 +1137,7 @@
           "expr": "sag_is_average_connection_time{product=\"msr\"}",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
-          "legendFormat": "__auto",
+          "legendFormat": "average time",
           "range": true,
           "refId": "A",
           "useBackend": false
@@ -1238,7 +1238,7 @@
           "expr": "sag_is_number_service_errors_excluding_internal_svc_per_minute{product=\"msr\"}",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
-          "legendFormat": "__auto",
+          "legendFormat": "count",
           "range": true,
           "refId": "A",
           "useBackend": false
@@ -1339,7 +1339,7 @@
           "expr": "sag_is_number_nonservice_errors{product=\"msr\"}",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
-          "legendFormat": "__auto",
+          "legendFormat": "count",
           "range": true,
           "refId": "A",
           "useBackend": false
@@ -1440,7 +1440,7 @@
           "expr": "sag_is_number_sessions_used{product=\"msr\"}",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
-          "legendFormat": "__auto",
+          "legendFormat": "count",
           "range": true,
           "refId": "A",
           "useBackend": false
@@ -1541,7 +1541,7 @@
           "expr": "sag_is_current_stateful_sessions{product=\"msr\"}",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
-          "legendFormat": "__auto",
+          "legendFormat": "count",
           "range": true,
           "refId": "A",
           "useBackend": false
@@ -1608,7 +1608,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -1713,7 +1714,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -1818,7 +1820,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -1924,7 +1927,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -1939,7 +1943,7 @@
             "h": 8,
             "w": 8,
             "x": 0,
-            "y": 58
+            "y": 42
           },
           "id": 24,
           "options": {
@@ -2081,7 +2085,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -2096,7 +2101,7 @@
             "h": 8,
             "w": 8,
             "x": 8,
-            "y": 58
+            "y": 42
           },
           "id": 25,
           "options": {
@@ -2199,7 +2204,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -2215,7 +2221,7 @@
             "h": 8,
             "w": 8,
             "x": 16,
-            "y": 58
+            "y": 42
           },
           "id": 26,
           "options": {
@@ -2824,6 +2830,6 @@
   "timezone": "browser",
   "title": "MSR dashboard",
   "uid": "beb38sua9tekgd",
-  "version": 1,
+  "version": 3,
   "weekStart": ""
 }
