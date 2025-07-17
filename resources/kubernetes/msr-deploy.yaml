@@ -1,0 +1,192 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: observability-sa
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: stt-observability
+data:
+  application.properties: |
+    jndi.DEFAULT_IS_JNDI_PROVIDER.providerURL=$secret{JNDI_URL}
+    jms.DEFAULT_IS_JMS_CONNECTION.clientID=DEFAULT_IS_JMS_CLIENT
+    jms.DEFAULT_IS_JMS_CONNECTION.enabled=true
+    jms.DEFAULT_IS_JMS_CONNECTION.csqSize=0
+    jms.DEFAULT_IS_JMS_CONNECTION.jndi_jndiAliasName=DEFAULT_IS_JNDI_PROVIDER
+    jms.DEFAULT_IS_JMS_CONNECTION.jndi_automaticallyCreateUMAdminObjects=true
+    jms.DEFAULT_IS_JMS_CONNECTION.producerMaxRetryAttempts=30
+    jms.DEFAULT_IS_JMS_CONNECTION.producerRetryInterval=1000
+    jms.DEFAULT_IS_JMS_CONNECTION.jndi_connectionFactoryLookupName=docker_k8s
+
+    settings.watt.net.default.accept=application/json
+    settings.watt.server.ns.lockingMode=none
+
+    settings.watt.server.audit.service.include=eu.*
+    settings.watt.server.audit.service.exclude=wm.,com.,pub.
+
+    globalvariable.SERVER.value=$env{SERVER}
+    globalvariable.DELAY_MILLIS.value=1000
+
+    user.Administrator.password=$secret{ADMIN_PASSWORD}
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: stt-observability
+  name: stt-observability
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: stt-observability
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+  template:
+    metadata:
+      labels:
+        app: stt-observability
+    spec:
+      imagePullSecrets:
+        - name: regcred
+      serviceAccountName: observability-sa 
+      containers:
+        - image: ghcr.io/staillanibm/msr-observability:latest 
+          name: msr
+          volumeMounts:
+            - name: application-properties
+              mountPath: /opt/softwareag/IntegrationServer/application.properties
+              subPath:   application.properties
+              readOnly:  true
+            - name: secrets
+              mountPath: /etc/secrets
+          readinessProbe:
+            tcpSocket:
+              port: 5555
+            initialDelaySeconds: 30
+            periodSeconds: 5
+            failureThreshold: 18
+          livenessProbe:
+            tcpSocket:
+              port: 5555
+            failureThreshold: 3
+            initialDelaySeconds: 120
+            periodSeconds: 5
+            successThreshold: 1
+            timeoutSeconds: 1
+          resources:
+            requests:
+              cpu: 300m
+              memory: 500Mi
+            limits:
+              cpu: 1000m
+              memory: 2000Mi
+          env:
+            - name: SERVER
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
+            - name: SW_AGENT_COLLECTOR_ESTABLISH_CLOUD_COMMUNICATION
+              value: "false"
+            - name: SW_AGENT_EXTERNAL_ESTABLISH_COMMUNICATION
+              value: "true"
+            - name: SW_AGENT_OTEL_ENDPOINT
+              value: "http://jaeger-collector.monitoring:4318/v1/traces"
+            - name: SW_AGENT_OTEL_HEADERS
+              value: "Content-Type#application/x-protobuf"
+            - name: SW_AGENT_EXTERNAL_SUPPORT_LONG_ID
+              value: "false"
+            - name: SW_AGENT_EXTERNAL_API_ERROR_CODES
+              value: "502,503,504"
+            - name: SW_AGENT_OTEL_RESOURCE_ATTRIBUTES
+              value: "service.name#stt-observability, service.namespace#integration"
+            - name: SW_AGENT_TRACE_TRANSFER_INTERVAL
+              value: "1000"
+            - name: SW_LOGGING_LEVEL
+              value: DEBUG
+      volumes:
+        - name: application-properties
+          configMap:
+            name: stt-observability
+            items:
+            - key:  application.properties
+              path: application.properties
+        - name: secrets
+          secret:
+            secretName: stt-observability
+      imagePullSecrets:
+        - name: regcred
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: stt-observability
+  labels:
+    name: stt-observability
+    app: stt-observability
+    product: msr
+    monitoring: enabled
+spec:
+  selector:
+    app: stt-observability
+  type: ClusterIP
+  sessionAffinity: ClientIP
+  ports:
+  - port: 5555
+    targetPort: 5555
+    name: http
+
+---
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: stt-observability
+  annotations:
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: "observability.sttlab.local"
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: stt-observability
+            port: 
+              number: 5555
+  tls:
+  - hosts: 
+    - observability.sttlab.local
+    secretName: tls-cert
+
+---
+
+kind: HorizontalPodAutoscaler
+apiVersion: autoscaling/v2
+metadata:
+  name: stt-observability
+spec:
+  scaleTargetRef:
+    kind: Deployment
+    name: stt-observability
+    apiVersion: apps/v1
+  minReplicas: 1
+  maxReplicas: 3
+  metrics:
+    - type: Resource
+      resource:
+        name: cpu
+        target:
+          type: Utilization
+          averageUtilization: 90

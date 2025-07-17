@@ -1,0 +1,21 @@
+grafana:
+  ingress:
+    enabled: true
+    hosts:
+      - your.grafana.domain
+    tls:
+      - secretName: tls-cert
+        hosts:
+          - your.grafana.domain
+    annotations:
+      kubernetes.io/ingress.class: nginx
+      nginx.ingress.kubernetes.io/ssl-redirect: "true"
+  persistence:
+    enabled: true
+    accessModes: ["ReadWriteOnce"]
+    size: 1Gi
+
+prometheus:
+  prometheusSpec:
+    image:
+      tag: v2.51.0
