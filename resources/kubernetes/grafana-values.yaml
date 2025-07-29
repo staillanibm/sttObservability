@@ -10,10 +10,37 @@ grafana:
     annotations:
       kubernetes.io/ingress.class: nginx
       nginx.ingress.kubernetes.io/ssl-redirect: "true"
+
   persistence:
     enabled: true
     accessModes: ["ReadWriteOnce"]
     size: 1Gi
+
+  sidecar:
+    datasources:
+      enabled: false
+
+  datasources:
+    datasources.yaml:
+      apiVersion: 1
+      datasources:
+        - name: Prometheus
+          uid: prometheus
+          type: prometheus
+          access: proxy
+          url: http://kube-prometheus-stack-prometheus.monitoring.svc.cluster.local:9090
+          editable: true
+        - name: Loki
+          type: loki
+          access: proxy
+          url: http://loki.monitoring.svc.cluster.local:3100
+          editable: true
+        - name: Jaeger
+          type: jaeger
+          access: proxy
+          url: http://jaeger-query.monitoring.svc.cluster.local:16686
+          editable: true
+
 
 prometheus:
   prometheusSpec:

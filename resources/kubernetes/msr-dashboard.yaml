@@ -45,7 +45,8 @@ data:
         },
         {
           "datasource": {
-            "type": "prometheus"
+            "type": "prometheus",
+            "uid": "prometheus"
           },
           "description": "",
           "fieldConfig": {
@@ -97,7 +98,6 @@ data:
             "sizing": "auto"
           },
           "pluginVersion": "12.0.2",
-          "repeatDirection": "h",
           "targets": [
             {
               "datasource": {
@@ -2815,6 +2815,10 @@ data:
               "text": "integration",
               "value": "integration"
             },
+            "datasource": {
+              "type": "prometheus",
+              "uid": "prometheus"
+            },
             "definition": "label_values(sag_is_uptime_seconds, namespace)",
             "label": "namespace",
             "name": "namespace",
@@ -2832,6 +2836,10 @@ data:
             "current": {
               "text": "stt-contact-management",
               "value": "stt-contact-management"
+            },
+            "datasource": {
+              "type": "prometheus",
+              "uid": "prometheus"
             },
             "definition": "label_values(sag_is_uptime_seconds{namespace=~\"$namespace\"}, service)",
             "label": "service",
@@ -2851,6 +2859,10 @@ data:
               "text": "stt-contact-management-7f5569d4f5-nnjrr",
               "value": "stt-contact-management-7f5569d4f5-nnjrr"
             },
+            "datasource": {
+              "type": "prometheus",
+              "uid": "prometheus"
+            },
             "definition": "label_values(kube_pod_info{namespace=~\"$namespace\", pod=~\"$service.*\"}, pod)",
             "includeAll": true,
             "label": "pod",
@@ -2869,6 +2881,10 @@ data:
             "current": {
               "text": "apigateway.acls:_get",
               "value": "apigateway.acls:_get"
+            },
+            "datasource": {
+              "type": "prometheus",
+              "uid": "prometheus"
             },
             "definition": "label_values(sag_is_service_requests_total{namespace=~\"$namespace\", job=~\"$service\", pod=~\"$pod\", service!~\"^(wm\\\\.|pub\\\\.).*\"}, service)",
             "description": "",
@@ -2894,5 +2910,5 @@ data:
       "timezone": "browser",
       "title": "MSR dashboard",
       "uid": "beb38sua9tekgd",
-      "version": 3
+      "version": 1
     }

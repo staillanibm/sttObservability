@@ -1,3 +1,3 @@
 source ./setenv.sh
 
-podman compose down
+docker-compose down

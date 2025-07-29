@@ -82,7 +82,7 @@ spec:
             timeoutSeconds: 1
           resources:
             requests:
-              cpu: 300m
+              cpu: 500m
               memory: 500Mi
             limits:
               cpu: 1000m
@@ -189,4 +189,4 @@ spec:
         name: cpu
         target:
           type: Utilization
-          averageUtilization: 90
+          averageUtilization: 100
